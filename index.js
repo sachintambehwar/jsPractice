@@ -1,13 +1,12 @@
 console.log("welcome to js");
-//polyfill for map
-// Array.prototype.myMap = function (callbackFn) {
-//   var arr = [];
-//   for (var i = 0; i < this.length; i++) {
-//     arr.push(callbackFn(this[i], i, this));
-//   }
-//   return arr;
-// };
-// //   return this;
+//**polyfill for map**
+Array.prototype.myMap = function (callbackFn) {
+  var arr = [];
+  for (var i = 0; i < this.length; i++) {
+    arr.push(callbackFn(this[i], i, this));
+  }
+  return arr;
+};
 
 // let myarr = [1, 2, 3];
 // const value = myarr.map((e) => {
@@ -23,15 +22,15 @@ console.log("welcome to js");
 // const filterArr = arr.filter((e) => e > 2);
 // console.log(filterArr, "filterArr");
 
-// Array.prototype.myfilter = function (cb) {
-//   var arr1 = [];
-//   for (let index = 0; index < this.length; index++) {
-//     if (cb(this[index])) {
-//       arr1.push(this[index]);
-//     }
-//   }
-//   return arr1;
-// };
+Array.prototype.myfilter = function (cb) {
+  var arr1 = [];
+  for (let index = 0; index < this.length; index++) {
+    if (cb(this[index])) {
+      arr1.push(this[index]);
+    }
+  }
+  return arr1;
+};
 // const filterArr1 = arr.myfilter((e) => e < 2);
 // console.log(filterArr1, "filterArr1");
 
@@ -42,15 +41,15 @@ const arr = [1, 2, 3, 4, 5];
 // }, 0);
 
 // console.log(sum, "sum");
-// Array.prototype.myreduce = function (cb, initialvalue) {
-//   var acc = initialvalue;
-//   for (let index = 0; index < this.length; index++) {
-//     if (cb(this[index], acc)) {
-//       acc += this[index];
-//     }
-//   }
-//   return acc;
-// };
+Array.prototype.myreduce = function (cb, initialvalue) {
+  var acc = initialvalue;
+  for (let index = 0; index < this.length; index++) {
+    if (cb(this[index], acc)) {
+      acc += this[index];
+    }
+  }
+  return acc;
+};
 
 // const sum = arr.myreduce((acc, curr) => {
 //   return (acc += curr);
@@ -60,19 +59,19 @@ const arr = [1, 2, 3, 4, 5];
 // let btnClick = false;
 // const btn = document.getElementById("btn");
 
-// const mypromise = new Promise((res, rej) => {
-//   btn.addEventListener("click", () => {
-//     res("promise resolved");
-//   });
-// });
+const mypromise = new Promise((res, rej) => {
+  btn.addEventListener("click", () => {
+    res("promise resolved");
+  });
+});
 
-// mypromise
-//   .then((res) => {
-//     console.log("res", res);
-//   })
-//   .catch((err) => {
-//     console.log("error");
-//   });
+mypromise
+  .then((res) => {
+    console.log("res", res);
+  })
+  .catch((err) => {
+    console.log("error");
+  });
 // console.log("value", value);
 
 // document.addEventListener("click", (e) => {
